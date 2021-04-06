@@ -44,7 +44,7 @@ const login = async function (req, res) {
 
     const token = jwt.sign({ _id: logUser._id }, process.env.JWT_TOKEN_SECRET, {
         algorithm: "HS256",
-        expiresIn: 50,
+        expiresIn: 60 * 60 * 24,
     });
 
     res.send(`Welcome, ${name}`);
